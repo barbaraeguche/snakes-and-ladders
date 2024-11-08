@@ -4,7 +4,7 @@ import java.util.Scanner;
  * This is the PlayLadderandSnake Class. It is the main class for the LadderandSnake program. It implements printing the welcome message, prompting users for number of players,
  * initializing the LadderandSnake Class, and finally calling the method that runs the game/program.
  */
-public class PlayLadderandSnake {
+public class GamePlay {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -28,7 +28,7 @@ public class PlayLadderandSnake {
             int players = scan.nextInt();
 
             //initializes the ladderandsnake class to start the game
-            LadderandSnake ladderAndSnake = new LadderandSnake(players);
+            SnakeNLadder ladderAndSnake = new SnakeNLadder(players);
 
             //method in the ladderandsnake class that runs the game
             ladderAndSnake.play();
