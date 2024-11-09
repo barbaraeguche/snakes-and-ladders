@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * this is the snakeladder class. this class is responsible for creating,
@@ -18,17 +19,23 @@ public class SnakeLadder {
     private int[][] snakes, ladders;
 
     /**
-     * default constructor.
+     * default constructor that initializes players.
      */
     public SnakeLadder() {
-        //creating a new player object for each player in the players array.
-        for (int i = 0; i < players.length; i++) {
-            players[i] = new Player("P" + i);
-        }
+        Scanner scanner = new Scanner(System.in);
+            //creating a new player object for each player in the players array.
+            for(int i = 0; i < players.length; i++) {
+                System.out.printf("\nEnter a single name for player %d: ", i);
+                
+                //take user input
+                String player = scanner.next();
+                players[i] = new Player(player);
+            }
 
-        //this is creating and showing the gameboard.
-        board.createBoard();
-        board.showBoard();
+            //this is creating and showing the gameboard.
+            board.createBoard();
+            board.showBoard();
+        scanner.close();
     }
 
     /**
@@ -217,8 +224,8 @@ public class SnakeLadder {
      */
     public void play() {
         //roll the dice for each player
-        for(Player p : players) {
-            p.setDiceValue(flipDice());
+        for(Player player : players) {
+            player.setDiceValue(flipDice());
         }
         System.out.println("\nNow deciding which player will be starting;");
 
