@@ -6,7 +6,7 @@ import java.util.Random;
  * setting up the snakes and ladders on the gameboard, creating, showing and updating the gameboard, moving the players on the gameboard,
  * checking for snakes and ladders on the gameboard, and finally running the game.
  */
-public class SnakeNLadder {
+public class SnakeLadder {
     private Player[] players = new Player[2];
     private Player firstPlayer, secondPlayer;
     private boolean gameOver = false;
@@ -21,13 +21,13 @@ public class SnakeNLadder {
     /**
      * This is the default constructor
      */
-    public SnakeNLadder() {}
+    public SnakeLadder() {}
 
     /**
      * This method initializes the number of players for the game, creates and shows the gameboard
      * @param numOfPlayers sets the number of players to be passed
      */
-    public SnakeNLadder(int numOfPlayers) {
+    public SnakeLadder(int numOfPlayers) {
 
         //this is checking if the number of players passed is > 2. if so, it prints a warning message and set the number of players to 2.
         if(numOfPlayers > 2) {
@@ -68,7 +68,7 @@ public class SnakeNLadder {
 
         //this is setting the dice value for each player in the players array.
         for(Player p : players) {
-            p.setDiceValue(SnakeNLadder.flipDice());
+            p.setDiceValue(SnakeLadder.flipDice());
         }
         System.out.println("\nNow deciding which player will be starting;");
         int i = 1; //to count the number of attempts it took to reach the decision on the order of play.
@@ -84,7 +84,7 @@ public class SnakeNLadder {
                 System.out.println("A tie was achieved between " + players[0] + " and " + players[1] + ". Attempting to break the tie\n");
                 i++;
                 for(Player p : players) {
-                    p.setDiceValue(SnakeNLadder.flipDice());
+                    p.setDiceValue(SnakeLadder.flipDice());
                 }
             }
 
@@ -115,7 +115,7 @@ public class SnakeNLadder {
         while(!gameOver) {
 
             //moves the first player by the dice value rolled.
-            firstPlayer.setDiceValue(SnakeNLadder.flipDice());
+            firstPlayer.setDiceValue(SnakeLadder.flipDice());
             movePlayerOnBoard(firstPlayer, firstPlayer.getDiceValue());
             System.out.println(firstPlayer + " got a dice value of " + firstPlayer.getDiceValue() + "; now in square " + firstPlayer.getPosition());
             checkForSnakesAndLadders(); //checks for snakes or ladders on the gameboard.
@@ -128,7 +128,7 @@ public class SnakeNLadder {
             }
 
             //moves the second player by the dice value rolled.
-            secondPlayer.setDiceValue(SnakeNLadder.flipDice());
+            secondPlayer.setDiceValue(SnakeLadder.flipDice());
             movePlayerOnBoard(secondPlayer, secondPlayer.getDiceValue());
             System.out.println(secondPlayer + " got a dice value of " + secondPlayer.getDiceValue() + "; now in square " + secondPlayer.getPosition());
             checkForSnakesAndLadders(); //checks for snakes or ladders on the gameboard.

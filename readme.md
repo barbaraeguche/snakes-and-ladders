@@ -32,8 +32,8 @@ cd snakes-and-ladders
 ```
 - **run the project:**
 ```bash
-javac GamePlay.java
-java GamePlay
+javac PlayGame.java
+java PlayGame
 ```
 
 ## gallery 📸
