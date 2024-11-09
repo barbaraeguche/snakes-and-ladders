@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 /**
  * This is the PlayLadderandSnake Class. It is the main class for the LadderandSnake program. It implements printing the welcome message, prompting users for number of players,
  * initializing the LadderandSnake Class, and finally calling the method that runs the game/program.
