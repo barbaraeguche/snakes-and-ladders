@@ -10,6 +10,14 @@ public class Board {
     private SnakeLadder snakeLadder;
 
     /**
+     * parameterized constructor that initializes the gameboard with the given snakeLadder object.
+     * @param snakeLadder the snakeLadder object
+     */
+    public Board(SnakeLadder snakeLadder) {
+        this.snakeLadder = snakeLadder;
+    }
+
+    /**
      * this method creates the gameboard.
      */
     protected void createBoard() {
@@ -28,13 +36,14 @@ public class Board {
      * this method makes the gameboard visible.
      */
     protected void showBoard() {
+        System.out.println();
         for(int j = 9; j >= 0; j--) {
             if(j % 2 == 0) {
-                for (int x = 0; x < 10; x++) {
+                for(int x = 0; x < 10; x++) {
                     System.out.print(gameboard[j][x] + "\t");
                 }
             } else {
-                for (int x = 9; x >= 0; x--) {
+                for(int x = 9; x >= 0; x--) {
                     System.out.print(gameboard[j][x] + "\t");
                 }
             }
@@ -77,31 +86,26 @@ public class Board {
                     }
                 }
 
-                /*
-                 * ////this checks if the player's current position is within the bounds of the
-                 * gameboard(1 - 100).
-                 * //if (newPosition == tile.getTileNumber()) {
-                 */
+                if(newPosition == tile.getTileNumber()) {
+                    //set the player's position to the current tile's position
+                    player.setPosition(tile.getTileNumber());
 
-                //set the player's position to the current tile's position
-                player.setPosition(tile.getTileNumber());
+                    //at tile 80, the player takes the ladder that goes up to tile 100.
+                    if(player.getPosition() == 80 || player.hasPlayerWon()) {
+                        System.out.printf("- %s rolled a dice-value of %d, and is now at tile %d%n", player, player.getDiceValue(), player.getPosition());
+                        snakeLadder.checkForSnakesOrLadders();
 
-                //at tile 80, the player takes the ladder that goes up to tile 100.
-                if(player.getPosition() == 80 || player.hasPlayerWon()) {
-                    System.out.printf("%s rolled a dice-value of %d, and is now at tile %d%n", player, player.getDiceValue(), player.getPosition());
-                    snakeLadder.checkForSnakesOrLadders();
+                        //print game over message and set the game over flag to true
+                        System.out.printf("- %s landed on tile %d, and has WON THE GAME!!!%n", player, player.getPosition());
+                        updateBoard(snakeLadder.players);
+                        snakeLadder.isGameOver = true;
 
-                    //print game over message and set the game over flag to true
-                    System.out.printf("%s landed on tile %d, and has WON THE GAME!!!%n", player, player.getPosition());
-                    updateBoard(snakeLadder.players);
-                    snakeLadder.isGameOver = true;
-
-                    //print the closing message and end the game
-                    System.out.print("\nThank you for playing Snakes & Ladders, goodbye for now...");
-                    System.exit(0);
+                        //print the closing message and end the game
+                        System.out.println("Thank you for playing Snakes & Ladders, goodbye for now...");
+                        System.out.print("-----------------------------------------------------------------------------------------------------");
+                        System.exit(0);
+                    }
                 }
-
-                //}
             }
         }
     }

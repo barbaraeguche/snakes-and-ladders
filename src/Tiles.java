@@ -45,7 +45,7 @@ public class Tiles {
      * @param players an array of players
      */
     public void setPlayers(Player[] players) {
-        for(Player player : players){
+        for(Player player: players){
             if(player.getPosition() == this.getTileNumber()){
                 this.players.add(player);
             }
@@ -69,7 +69,7 @@ public class Tiles {
         String padZeros = tileLength == 1? "00" : tileLength == 2? "0" : "";        
 
         if(!players.isEmpty()){
-            return String.format("\t[[ %s ]]", this.players);
+            return String.format("\t%s", String.join("", players.stream().map(Player::toString).toArray(String[]::new)));
         } else {
             return String.format("\t%s%d", padZeros, tileNumber);
         }
