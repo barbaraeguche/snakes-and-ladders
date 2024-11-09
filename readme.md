@@ -1,4 +1,4 @@
-# snakes and ladders 🐍🪜
+# snakes and ladders
 an implementation of the classic board game **snakes and ladders**. it is a two-player board game that simulates the traditional gameplay of moving across a 10x10 grid. players take turns rolling a dice to advance their positions, encountering ladders that elevate them and snakes that send them back. the objective is to be the first to reach square 100.
 
 ## features 👾
