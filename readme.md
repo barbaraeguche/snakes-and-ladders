@@ -8,7 +8,7 @@ an implementation of the classic board game **snakes and ladders**. it is a two-
   - **user-friendly interface**: clear prompts and messages guide players through the game, enhancing the overall experience.
 
 ## game play 🎲
-- players take turns rolling a dice to determine their movement on the board.
+- player take turns rolling a dice to determine their movement on the board. these turns are randomly generated, ensuring that the sequence of moves is unpredictable.
 - the game starts with both players at square 0, outside the board.
 - players move forward based on the dice value rolled.
 - if a player lands on a square with the bottom of a ladder, they climb to the top of the ladder.
@@ -53,5 +53,11 @@ java PlayGame
   
 
   - **game won**
+  
+
+
+
+
+
   
 </details>
