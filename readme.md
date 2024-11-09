@@ -41,23 +41,17 @@ java PlayGame
   <summary>showcase</summary>
 
   - **initial run**
-  
+  ![init](https://github.com/user-attachments/assets/615ce88b-d8f6-4232-b45a-5ef37c7d6f7c)
 
   - **both players on same tile**
-  
-
-  - **landed on a ladder**
-  
+  ![same tile](https://github.com/user-attachments/assets/214735a4-f633-4d6b-8c46-a5995e78550e)
 
   - **landed on a snake**
+  ![snake](https://github.com/user-attachments/assets/3f95a68b-8428-486f-b43c-de188ed05f5d)
   
+  - **landed on a ladder**
+  ![ladder](https://github.com/user-attachments/assets/6d31dc55-0026-45f5-ac54-18ffaef15eaf)
 
   - **game won**
-  
-
-
-
-
-
-  
+  ![won](https://github.com/user-attachments/assets/1b8d5b50-4a63-40db-a4c9-fe651d6bf062)
 </details>
