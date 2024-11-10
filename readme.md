@@ -29,6 +29,7 @@ git clone https://github.com/barbaraeguche/snakes-and-ladders.git
 - **navigate to the project directory:**
 ```bash
 cd snakes-and-ladders
+cd src
 ```
 - **run the project:**
 ```bash
